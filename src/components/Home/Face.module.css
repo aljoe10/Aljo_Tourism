@@ -1,0 +1,178 @@
+/* Face.module.css */
+.face {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: backdrop 0s infinite;
+}
+
+@keyframes backdrop {
+  0% {
+    background-color: rgba(1, 1, 1, 0.4);
+  }
+
+  50% {
+    background-color: rgba(1, 1, 1, 0);
+  }
+
+  100% {
+    background-color: rgba(1, 1, 1, 0.4);
+  }
+}
+
+.bold {
+  font-family: "Ubuntu";
+  font-size: 7rem;
+}
+
+.normal {
+  font-family: "Rajdhani";
+  font-size: 3rem;
+}
+
+.bold,
+.normal {
+  color: white;
+  display: fixed;
+}
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 10vh;
+
+  margin-bottom: 10rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  margin-right: 3rem;
+  font-family: "Ubuntu";
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.link:hover {
+  border-bottom: solid 0.1rem white;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+  .bold {
+    font-size: 6rem;
+  }
+
+  .normal {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .bold {
+    font-size: 5rem;
+  }
+
+  .normal {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bold {
+    font-size: 4rem;
+  }
+
+  .normal {
+    font-size: 1.8rem;
+  }
+
+  .link {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .bold {
+    font-size: 3.5rem;
+  }
+
+  .normal {
+    font-size: 1.5rem;
+  }
+
+  .link {
+    font-size: 1rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes changeText {
+  0% {
+    content: "Voyage of Discovery";
+  }
+  25% {
+    content: "Explore the Unknown";
+  }
+  50% {
+    content: "Venture into the Wild";
+  }
+  75% {
+    content: "Journey to New Horizons";
+  }
+  100% {
+    content: "Voyage of Discovery";
+  }
+}
+
+/* Add hover effect */
+.backdrop h1 {
+  transition: color 0.3s;
+}
+
+.backdrop h1:hover {
+  color: rgb(3, 0, 14); /* Change to the desired color on hover */
+}
