@@ -15,6 +15,15 @@ function TravelAgent() {
     planPrice: "",
     benefits: "",
   });
+  const planTitleOptions = [
+    "Adventure Tours",
+    "Wildlife and Safari Tours",
+    "Beach and Island Tours",
+    "Culinary Tours",
+    "Cruise Tours",
+    "Honeymoon Tours",
+    "Solo Travel Tours",
+  ];
   //   const [travelAgents, setTravelAgents] = useState([]);
   //   const [newTravelAgent, setNewTravelAgent] = useState({
   //     AgentName: '',
@@ -104,7 +113,7 @@ function TravelAgent() {
   //   };
 
   return (
-    <div className="container">
+  <div className="container">
         <div className="heading-container">
       <h1>Crafting Unforgettable Adventures: Enrich Tour Packages with this Form</h1>
       </div>
@@ -112,8 +121,7 @@ function TravelAgent() {
         <form onSubmit={addTravelDetail}>
           <div className="form-group">
             <label htmlFor="planTitle">Plan Title</label>
-            <input
-              type="text"
+            <select
               className="form-control"
               id="planTitle"
               value={newTravelDetail.planTitle}
@@ -123,7 +131,14 @@ function TravelAgent() {
                   planTitle: e.target.value,
                 })
               }
-            />
+            >
+              <option value="">Select a Plan Title</option>
+              {planTitleOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="form-group">
             <label htmlFor="planDescription">Plan Description</label>
@@ -238,7 +253,7 @@ function TravelAgent() {
                 <p className="cards-text">Location: {travel.location}</p>
                 <p className="cards-text">Country: {travel.country}</p>
                 <p className="cards-text">Benefits: {travel.benefits}</p>
-                <p className="cards-text">Price: {travel.planPrice}</p>
+                <p className="cards-text">Price: ₹{travel.planPrice}</p>
                 <button
                   className="btnn btnn-success btn-sm mr-2"
                   onClick={() =>

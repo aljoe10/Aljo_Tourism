@@ -6,6 +6,7 @@ import ContactForm from "./components/Contact/Contact";
 import {Feedback} from "./components/Feedback/Feedback";
 import Traveler from "./components/Traveler/Traveler";
 import TravelAgent from "./components/TravelAgent/TravelAgent";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
     //   <Route path="/test" element={<Feedback />} />
       
     // </Routes>
-    <Traveler/>
-    // <TravelAgent/>
+    // <Admin/>
+    // <Traveler/>
+    <TravelAgent/>
   );
 }
 
