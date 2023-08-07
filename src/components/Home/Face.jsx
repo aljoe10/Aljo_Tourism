@@ -40,7 +40,7 @@ const Face = () => {
 
           <div className={styles.options}>
             <p className={styles.link}>Register</p>
-            <p className={styles.link}><Link to = './login'>Login</Link></p>
+            <p className={styles.link}><Link to = './login' style = {{textDecoration: "none", color: "white"}}>Login</Link></p>
           </div>
         </div>
 

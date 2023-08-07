@@ -18,7 +18,7 @@ const Footer = () => {
         <div className={styles.linkset}>
           <h1 className={styles.heading}>About Us</h1>
           <p className={styles.subheading}>
-            <a href="#">How it works</a>
+            <a href="#" style = {{textDecoration: "none", color: "white"}}>How it works</a>
           </p>
         </div>
 

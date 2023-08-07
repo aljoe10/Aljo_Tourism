@@ -1,28 +1,22 @@
 import styles from "./Feedback.module.css";
 import { useState } from "react";
-const Feedback = () => {
-  const [stars, setStars] = useState({
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
 
+const Feedback = () => {
+  const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
 
-  const clickHandler = (e) => {
-    let totalStars = Object.values(stars).reduce((total, data) => {
-      if (data == true) return total + data;
-      else return total;
-    });
-
-    let feedback = { review: review, stars: totalStars + 1 };
-
-    console.log(feedback);
+  const handleRatingClick = (selectedRating) => {
+    setRating(selectedRating);
   };
 
-  const changeHandler = (e) => {
+  const handleReviewChange = (e) => {
     setReview(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    const feedback = { review: review, stars: rating };
+    console.log(feedback);
+    // You can perform further actions here, such as sending the feedback to a server.
   };
 
   return (
@@ -36,75 +30,16 @@ const Feedback = () => {
 
       <div className={styles.form}>
         <div className={styles.stars}>
-          <h1
-            className={styles.star}
-            onClick={() => {
-              setStars((prev) => ({
-                2: false,
-                3: false,
-                4: false,
-                5: false,
-              }));
-            }}
-          >
-            ⭐
-          </h1>
-          <h1
-            className={styles.star}
-            onClick={() => {
-              setStars((prev) => ({
-                2: !prev[2],
-                3: false,
-                4: false,
-                5: false,
-              }));
-            }}
-            style={{ opacity: `${stars[2] ? "1" : "0.3"}` }}
-          >
-            ⭐
-          </h1>
-          <h1
-            className={styles.star}
-            onClick={() => {
-              setStars((prev) => ({
-                2: !prev[3],
-                3: !prev[3],
-                4: false,
-                5: false,
-              }));
-            }}
-            style={{ opacity: `${stars[3] ? "1" : "0.3"}` }}
-          >
-            ⭐
-          </h1>
-          <h1
-            className={styles.star}
-            onClick={() => {
-              setStars((prev) => ({
-                2: !prev[4],
-                3: !prev[4],
-                4: !prev[4],
-                5: false,
-              }));
-            }}
-            style={{ opacity: `${stars[4] ? "1" : "0.3"}` }}
-          >
-            ⭐
-          </h1>
-          <h1
-            className={styles.star}
-            onClick={() => {
-              setStars((prev) => ({
-                2: !prev[5],
-                3: !prev[5],
-                4: !prev[5],
-                5: !prev[5],
-              }));
-            }}
-            style={{ opacity: `${stars[5] ? "1" : "0.3"}` }}
-          >
-            ⭐
-          </h1>
+          {[1, 2, 3, 4, 5].map((star) => (
+            <h1
+              key={star}
+              className={styles.star}
+              onClick={() => handleRatingClick(star)}
+              style={{ opacity: `${rating >= star ? "1" : "0.3"}` }}
+            >
+              ⭐
+            </h1>
+          ))}
         </div>
 
         <div className={styles.review}>
@@ -113,13 +48,15 @@ const Feedback = () => {
             rows="5"
             id="review"
             name="review"
+            placeholder="Write your review here..."
             style={{ height: "15rem" }}
-            onChange={changeHandler}
+            value={review}
+            onChange={handleReviewChange}
           ></textarea>
         </div>
 
         <div className={styles.submit}>
-          <h3 className={styles.send} onClick={clickHandler}>
+          <h3 className={styles.send} onClick={handleSubmit}>
             Send
           </h3>
         </div>

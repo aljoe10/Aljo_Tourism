@@ -1,0 +1,102 @@
+
+
+.container {
+  padding: 20px;
+}
+
+.cardss {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.cardss:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-containerr {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-groupp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.form-groupp label {
+  margin-right: 10px;
+}
+
+.form-controll {
+  width: 200px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-controll option {
+  padding: 5px;
+}
+
+
+
+.cardss-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cardss-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.btnnn-primary {
+  margin-bottom: 50px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.img-containerr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.img-containerr img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+
+.btnnn-success {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading-container {
+  text-align: center;
+}
